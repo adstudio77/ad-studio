@@ -44,7 +44,7 @@ public/
 ## À personnaliser avant la mise en ligne
 
 - `src/components/Contact.astro` : remplacer l'email et le téléphone
-  placeholders (`contact@ad-studio-serris.fr`, `+33 (0)0 00 00 00 00`) par vos
+  placeholders (`adstudio77700@gmail.com`, `+33 (0)788509405`) par vos
   vraies coordonnées, et brancher le formulaire sur un service d'envoi
   (Formspree, Resend, un webhook...) — le `mailto:` actuel est un dépannage
   minimal, pas fiable sur tous les navigateurs/mobiles.
