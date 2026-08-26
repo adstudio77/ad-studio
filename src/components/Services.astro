@@ -1,0 +1,173 @@
+---
+const groups = [
+  {
+    label: "Studio photo",
+    items: [
+      {
+        n: "01",
+        title: "Fonds & lumière",
+        desc: "Location du studio équipé (fonds, éclairage) en autonomie. Vous amenez votre équipe, on vous laisse les clés.",
+      },
+      {
+        n: "02",
+        title: "Avec photographe",
+        desc: "Le studio, la lumière, et un photographe AD STUDIO pour prendre en charge la prise de vue.",
+      },
+      {
+        n: "03",
+        title: "Photographe + DA",
+        desc: "Un service sur mesure : photographe et direction artistique pour construire l'image de votre marque de A à Z.",
+      },
+    ],
+  },
+  {
+    label: "Studio podcast",
+    items: [
+      {
+        n: "04",
+        title: "Fond, fauteuils & micros",
+        desc: "Le plateau podcast prêt à enregistrer — fond, assises, micros. Pas de caméra, vous gérez la captation.",
+      },
+      {
+        n: "05",
+        title: "Avec captation vidéo",
+        desc: "Le plateau podcast complet, avec une personne dédiée pour filmer votre épisode.",
+      },
+      {
+        n: "06",
+        title: "Captation + DA",
+        desc: "On vous aide à construire le podcast — format, réalisation — avec captation vidéo incluse.",
+      },
+    ],
+  },
+  {
+    label: "Contenu & réseaux",
+    items: [
+      {
+        n: "07",
+        title: "Réseaux sociaux",
+        desc: "Aide à la création de contenu, gestion de vos réseaux sociaux et consulting stratégique.",
+      },
+    ],
+  },
+  {
+    label: "Espace de réunion",
+    items: [
+      {
+        n: "08",
+        title: "Location de locaux",
+        desc: "Un espace pour vos réunions, ateliers ou tournages de courtoisie, à deux pas des studios.",
+      },
+    ],
+  },
+];
+---
+<section id="services" class="services">
+  <div class="wrap">
+    <div class="services__head">
+      <h2 class="services__title">Nos services,<br />tous sur <span>devis</span>.</h2>
+      <p class="services__intro">
+        Huit façons de travailler avec AD STUDIO — du studio en location libre
+        à l'accompagnement complet, photo, podcast ou contenu.
+      </p>
+    </div>
+
+    {groups.map((group) => (
+      <div class="services__group">
+        <p class="eyebrow services__label">{group.label}</p>
+        <div class="services__grid">
+          {group.items.map((item) => (
+            <article class="card">
+              <div class="card__top">
+                <span class="card__n">{item.n}</span>
+                <span class="pill">Sur devis</span>
+              </div>
+              <h3 class="card__title">{item.title}</h3>
+              <p class="card__desc">{item.desc}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .services {
+    background: var(--black);
+    color: var(--white);
+    padding: 100px 0 90px;
+  }
+  .services__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+    margin-bottom: 64px;
+    flex-wrap: wrap;
+  }
+  .services__title {
+    font-size: clamp(34px, 5vw, 58px);
+    text-transform: uppercase;
+  }
+  .services__title span { color: var(--pink); }
+  .services__intro {
+    max-width: 360px;
+    color: rgba(255,255,255,0.65);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .services__group + .services__group { margin-top: 56px; }
+  .services__label {
+    color: var(--orange);
+    margin-bottom: 20px;
+  }
+  .services__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .card {
+    background: #141314;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+  }
+  .card:hover {
+    border-color: var(--pink);
+    transform: translateY(-4px);
+    background: #1a1a1a;
+  }
+  .card__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+  }
+  .card__n {
+    font-family: var(--font-mono);
+    color: var(--pink-light);
+    font-size: 14px;
+  }
+  .card .pill { color: var(--pink); }
+  .card__title {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .card__desc {
+    color: rgba(255,255,255,0.6);
+    font-size: 14.5px;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .services__grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 620px) {
+    .services__grid { grid-template-columns: 1fr; }
+  }
+</style>

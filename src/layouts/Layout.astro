@@ -1,0 +1,28 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = "AD STUDIO — Studio Photo, Podcast & Salle de réunion à Serris (77)",
+  description = "AD STUDIO, studio créatif à Serris près de Disneyland Paris et du Val d'Europe : location de studio photo, studio podcast, salle de réunion, création de contenu et gestion de réseaux sociaux. Tout sur devis.",
+} = Astro.props;
+import "../styles/global.css";
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/logo.png" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

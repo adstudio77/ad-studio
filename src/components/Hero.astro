@@ -1,0 +1,100 @@
+---
+---
+<section id="top" class="hero">
+  <div class="wrap hero__inner">
+    <p class="eyebrow hero__eyebrow">
+      <span class="dot"></span> Serris (77) — à 7 min du Val d'Europe, 15 min de Disneyland Paris
+    </p>
+
+    <h1 class="hero__title">
+      <span>UN LIEU.</span>
+      <span>TROIS <em>TALENTS</em>.</span>
+      <span>PHOTO<span class="dot">·</span>PODCAST<span class="dot">·</span>CONTENU</span>
+    </h1>
+
+    <div class="hero__row">
+      <p class="hero__sub">
+        AD STUDIO met à votre disposition un studio photo, un studio podcast et une
+        salle de réunion à Serris — avec ou sans équipe créative. Chaque projet est
+        pensé sur mesure et chiffré sur devis.
+      </p>
+      <div class="hero__ctas">
+        <a href="#contact" class="btn btn-pink">Demander un devis</a>
+        <a href="#services" class="btn btn-outline-dark">Voir les services</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__wordmark" aria-hidden="true">AD STUDIO</div>
+</section>
+
+<style>
+  .hero {
+    padding-top: 64px;
+    padding-bottom: 24px;
+    overflow: hidden;
+  }
+  .hero__eyebrow {
+    color: var(--pink);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+  .hero__eyebrow .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--orange);
+    display: inline-block;
+  }
+  .hero__title {
+    display: flex;
+    flex-direction: column;
+    font-size: clamp(42px, 8vw, 96px);
+    text-transform: uppercase;
+  }
+  .hero__title em {
+    font-style: normal;
+    color: var(--pink);
+  }
+  .hero__title .dot {
+    color: var(--orange);
+    padding: 0 6px;
+  }
+  .hero__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 2px solid var(--ink);
+  }
+  .hero__sub {
+    max-width: 480px;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .hero__ctas {
+    display: flex;
+    gap: 14px;
+    flex-shrink: 0;
+  }
+  .hero__wordmark {
+    font-family: var(--font-display);
+    font-size: clamp(90px, 18vw, 260px);
+    line-height: 1;
+    color: var(--pink-light);
+    text-align: center;
+    margin-top: 40px;
+    -webkit-text-stroke: 1px var(--pink-light);
+    user-select: none;
+    letter-spacing: -0.02em;
+  }
+
+  @media (max-width: 760px) {
+    .hero__row { flex-direction: column; align-items: flex-start; }
+  }
+</style>
