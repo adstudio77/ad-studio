@@ -52,19 +52,9 @@
 
       <div class="studio__transit">
         <p class="eyebrow">Transports en commun</p>
-
-        <div class="studio__transit-row">
-          <p class="studio__transit-text">
-            Le site accueille notamment un café-beauté, un bar à bières, une
-            boulangerie ainsi que deux restaurants, offrant ainsi un
-            environnement convivial et pratique avec de nombreux services à
-            proximité.
-          </p>
-
-          <button type="button" class="studio__transit-trigger" id="transitTrigger" aria-label="Agrandir le plan des transports">
-            <img src="/plan-bureau.png" alt="Plan des transports en commun pour rejoindre AD STUDIO" />
-          </button>
-        </div>
+        <button type="button" class="studio__transit-trigger" id="transitTrigger" aria-label="Agrandir le plan des transports">
+          <img src="/plan-bureau.png" alt="Plan des transports en commun pour rejoindre AD STUDIO" />
+        </button>
       </div>
     </div>
   </div>
@@ -176,28 +166,13 @@
 
   .studio__transit .eyebrow {
     color: var(--black);
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     display: block;
-  }
-
-  .studio__transit-row {
-    display: flex;
-    gap: 24px;
-    align-items: center;
-  }
-
-  .studio__transit-text {
-    flex: 0 0 200px;
-    font-size: 14.5px;
-    line-height: 1.55;
-    color: var(--ink);
-    margin: 0;
   }
 
   .studio__transit-trigger {
     display: block;
-    flex: 1;
-    min-width: 0;
+    width: 100%;
     padding: 0;
     background: none;
     border: none;
@@ -254,16 +229,6 @@
   @media (max-width: 900px) {
     .studio__inner {
       grid-template-columns: 1fr;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .studio__transit-row {
-      flex-direction: column;
-      align-items: stretch;
-    }
-    .studio__transit-text {
-      flex: none;
     }
   }
 </style>
