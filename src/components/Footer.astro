@@ -1,20 +1,32 @@
 ---
 const year = new Date().getFullYear();
 ---
+
 <footer class="footer">
   <div class="wrap footer__inner">
     <div class="footer__top">
-      <img src="/logo-blanc.png" alt="AD STUDIO" class="footer__logo" />
+      <img
+        src="/logo-blanc.png"
+        alt="AD STUDIO"
+        class="footer__logo"
+      />
+
       <div class="footer__nav">
         <a href="#services">Services</a>
         <a href="#studio">Le studio</a>
-        <a href="#reseaux">Nos Partenaires</a>
+        <a href="#partenaires">Nos Partenaires</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
+
     <div class="footer__bottom">
-      <p>Boulevard Michael Faraday, 77700 Serris — Photo · Podcast · Content</p>
-      <p>© {year} AD STUDIO. Tous droits réservés.</p>
+      <p>
+        Boulevard Michael Faraday, 77700 Serris — Photo · Podcast · Content
+      </p>
+
+      <p>
+        © {year} AD STUDIO. Tous droits réservés.
+      </p>
     </div>
   </div>
 </footer>
@@ -25,30 +37,44 @@ const year = new Date().getFullYear();
     color: var(--white);
     padding: 56px 0 32px;
   }
+
   .footer__top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 32px;
-    border-bottom: 1px solid rgba(255,255,255,0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     flex-wrap: wrap;
     gap: 24px;
   }
-  .footer__logo { height: 40px; width: auto; }
+
+  .footer__logo {
+    height: 40px;
+    width: auto;
+  }
+
   .footer__nav {
     display: flex;
     gap: 28px;
     font-size: 14px;
     font-weight: 600;
   }
-  .footer__nav a { text-decoration: none; color: rgba(255,255,255,0.75); }
-  .footer__nav a:hover { color: var(--pink); }
+
+  .footer__nav a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .footer__nav a:hover {
+    color: var(--pink);
+  }
+
   .footer__bottom {
     display: flex;
     justify-content: space-between;
     padding-top: 24px;
     font-size: 13px;
-    color: rgba(255,255,255,0.45);
+    color: rgba(255, 255, 255, 0.45);
     flex-wrap: wrap;
     gap: 10px;
   }
