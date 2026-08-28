@@ -33,4 +33,213 @@
         <p>Boulevard Michael Faraday<br />77700 Serris</p>
       </div>
 
-      <a href="https://www.google.com/maps/search/?api=1&query=Boulevard+Michael+Faraday+77700+Serris" target="_blank" rel="noopener" class="btn
+      <a href="https://www.google.com/maps/search/?api=1&query=Boulevard+Michael+Faraday+77700+Serris" target="_blank" rel="noopener" class="btn btn-outline-dark">Itinéraire</a>
+    </div>
+
+    <div class="studio__right">
+      <div class="studio__map">
+        <iframe
+          title="Localisation AD STUDIO — Boulevard Michael Faraday, Serris"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=2.7697%2C48.8359%2C2.8097%2C48.8559&layer=mapnik&marker=48.8459%2C2.7897"
+          loading="lazy"
+        ></iframe>
+      </div>
+
+      <div class="studio__transit">
+        <p class="eyebrow">Transports en commun</p>
+        <button type="button" class="studio__transit-trigger" id="transitTrigger" aria-label="Agrandir le plan des transports">
+          <img src="/plan-bureau.png" alt="Plan des transports en commun pour rejoindre AD STUDIO" />
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="studio__lightbox" id="transitLightbox">
+    <button type="button" class="studio__lightbox-close" aria-label="Fermer">✕</button>
+    <img src="/plan-bureau.png" alt="Plan des transports en commun pour rejoindre AD STUDIO" />
+  </div>
+</section>
+
+<style>
+  .studio {
+    background: var(--pink-light);
+    padding: 96px 0;
+  }
+
+  .studio__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .studio__label {
+    color: var(--black);
+    margin-bottom: 18px;
+  }
+
+  .studio__title {
+    font-size: clamp(32px, 4.5vw, 50px);
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 22px;
+  }
+
+  .studio__title span {
+    color: var(--white);
+    -webkit-text-stroke: 1.5px var(--ink);
+  }
+
+  .studio__desc {
+    font-size: 16.5px;
+    line-height: 1.6;
+    max-width: 460px;
+    margin-bottom: 32px;
+  }
+
+  .studio__stats {
+    list-style: none;
+    display: flex;
+    gap: 36px;
+    padding: 0;
+    margin: 0 0 32px;
+  }
+
+  .studio__stat-num {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 34px;
+    color: var(--white);
+    -webkit-text-stroke: 1px var(--ink);
+  }
+
+  .studio__stat-label {
+    display: block;
+    font-size: 13.5px;
+    max-width: 130px;
+    margin-top: 4px;
+  }
+
+  .studio__address {
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: var(--radius);
+    padding: 18px 22px;
+    margin-bottom: 28px;
+    display: inline-block;
+  }
+
+  .studio__address .eyebrow {
+    margin-bottom: 6px;
+    color: var(--black);
+  }
+
+  .studio__address p:last-child {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  .studio__right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .studio__map {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 3px solid var(--ink);
+    aspect-ratio: 4 / 3.4;
+  }
+
+  .studio__map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .studio__transit .eyebrow {
+    color: var(--black);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .studio__transit-trigger {
+    display: block;
+    width: 100%;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: zoom-in;
+  }
+
+  .studio__transit-trigger img {
+    width: 100%;
+    display: block;
+    border-radius: var(--radius);
+    border: 3px solid var(--ink);
+    transition: opacity 0.2s ease;
+  }
+
+  .studio__transit-trigger:hover img {
+    opacity: 0.9;
+  }
+
+  .studio__lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.85);
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    cursor: zoom-out;
+  }
+
+  .studio__lightbox.open {
+    display: flex;
+  }
+
+  .studio__lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  .studio__lightbox-close {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 28px;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  @media (max-width: 900px) {
+    .studio__inner {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  const trigger = document.getElementById('transitTrigger');
+  const lightbox = document.getElementById('transitLightbox');
+  const closeBtn = lightbox?.querySelector('.studio__lightbox-close');
+
+  const open = () => lightbox?.classList.add('open');
+  const close = () => lightbox?.classList.remove('open');
+
+  trigger?.addEventListener('click', open);
+  closeBtn?.addEventListener('click', close);
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) close();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
+  });
+</script>
