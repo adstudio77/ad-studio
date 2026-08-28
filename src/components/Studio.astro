@@ -33,27 +33,22 @@
         <p>Boulevard Michael Faraday<br />77700 Serris</p>
       </div>
 
+      <a href="https://www.google.com/maps/search/?api=1&query=Boulevard+Michael+Faraday+77700+Serris" target="_blank" rel="noopener" class="btn btn-outline-dark">Itinéraire</a>
+    </div>
+
+    <div class="studio__right">
+      <div class="studio__map">
+        <iframe
+          title="Localisation AD STUDIO — Boulevard Michael Faraday, Serris"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=2.7697%2C48.8359%2C2.8097%2C48.8559&layer=mapnik&marker=48.8459%2C2.7897"
+          loading="lazy"
+        ></iframe>
+      </div>
+
       <div class="studio__transit">
         <p class="eyebrow">Transports en commun</p>
         <img src="/plan-bureau.png" alt="Plan des transports en commun pour rejoindre AD STUDIO" />
       </div>
-
-      
-        href="https://www.google.com/maps/search/?api=1&query=Boulevard+Michael+Faraday+77700+Serris"
-        target="_blank"
-        rel="noopener"
-        class="btn btn-outline-dark"
-      >
-        Itinéraire
-      </a>
-    </div>
-
-    <div class="studio__map">
-      <iframe
-        title="Localisation AD STUDIO — Boulevard Michael Faraday, Serris"
-        src="https://www.openstreetmap.org/export/embed.html?bbox=2.7697%2C48.8359%2C2.8097%2C48.8559&layer=mapnik&marker=48.8459%2C2.7897"
-        loading="lazy"
-      ></iframe>
     </div>
   </div>
 </section>
@@ -68,7 +63,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 56px;
-    align-items: center;
+    align-items: start;
   }
 
   .studio__label {
@@ -136,20 +131,10 @@
     font-weight: 700;
   }
 
-  .studio__transit {
-    margin-bottom: 28px;
-  }
-
-  .studio__transit .eyebrow {
-    color: var(--black);
-    margin-bottom: 10px;
-    display: block;
-  }
-
-  .studio__transit img {
-    border-radius: 12px;
-    border: 2px solid var(--ink);
-    max-width: 320px;
+  .studio__right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
   }
 
   .studio__map {
@@ -163,6 +148,19 @@
     width: 100%;
     height: 100%;
     border: 0;
+  }
+
+  .studio__transit .eyebrow {
+    color: var(--black);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .studio__transit img {
+    width: 100%;
+    display: block;
+    border-radius: var(--radius);
+    border: 3px solid var(--ink);
   }
 
   @media (max-width: 900px) {
