@@ -1,81 +1,95 @@
 ---
-const points = [
-  "Création de contenu photo & vidéo pour vos réseaux",
-  "Gestion de vos comptes au quotidien",
-  "Consulting stratégie & ligne éditoriale",
-];
 ---
-<section id="reseaux" class="reseaux">
-  <div class="wrap reseaux__inner">
-    <h2 class="reseaux__title">
-      Vos réseaux, <span>notre studio</span>.
-    </h2>
-    <div class="reseaux__body">
-      <ul class="reseaux__list">
-        {points.map((p) => (
-          <li>
-            <span class="reseaux__icon">✺</span>
-            {p}
-          </li>
-        ))}
-      </ul>
-      <div class="reseaux__cta">
-        <p>
-          On produit le contenu dans nos studios photo &amp; podcast, puis on vous
-          aide à le faire vivre sur vos réseaux — à la carte ou en continu.
-        </p>
-        <a href="#contact" class="btn btn-pink">En discuter</a>
-      </div>
-    </div>
+<section id="reseaux" class="apropos">
+  <div class="apropos__photo">
+    <img src="/alexia.jpg" alt="Alexia, fondatrice d'AD STUDIO" />
+  </div>
+
+  <div class="apropos__content">
+    <h2 class="apropos__name">Alexia</h2>
+
+    <p class="apropos__text">
+      Actuellement étudiante en Master 2 en Communication et Publicité à l'ESP
+      Paris, j'évolue en alternance chez Magic Dream, où j'affine mon
+      expertise en stratégie de communication et en création de contenu.
+    </p>
+
+    <p class="apropos__text">
+      Passionnée depuis toujours par l'image et l'impact qu'elle peut avoir,
+      j'ai fondé AD Studio Vision en 2024 avec l'ambition de créer un pont
+      entre la photographie, la vidéo et la communication visuelle. Mon
+      objectif est d'accompagner les marques, les entrepreneurs et les
+      artistes dans la construction d'une identité forte et cohérente à
+      travers des visuels percutants et une stratégie adaptée.
+    </p>
+
+    <p class="apropos__text">
+      Chez AD Studio Vision, je mets mon savoir-faire au service de projets
+      variés : shootings photo professionnels, vidéos promotionnelles,
+      création d'identités visuelles et conseils en communication. Chaque
+      projet est une opportunité d'allier créativité et storytelling pour
+      raconter une histoire authentique et marquante.
+    </p>
   </div>
 </section>
 
 <style>
-  .reseaux {
-    background: var(--orange);
-    padding: 90px 0;
-    color: var(--ink);
-  }
-  .reseaux__title {
-    font-size: clamp(32px, 5vw, 56px);
-    text-transform: uppercase;
-    margin-bottom: 48px;
-  }
-  .reseaux__title span {
-    color: var(--white);
-    -webkit-text-stroke: 1.5px var(--ink);
-  }
-  .reseaux__body {
+  .apropos {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    border-top: 2px solid var(--ink);
-    padding-top: 40px;
-  }
-  .reseaux__list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    font-weight: 700;
-    font-size: 19px;
-  }
-  .reseaux__list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  .reseaux__icon { color: var(--pink); flex-shrink: 0; }
-  .reseaux__cta p {
-    font-size: 16.5px;
-    line-height: 1.6;
-    max-width: 420px;
-    margin-bottom: 24px;
+    min-height: 640px;
   }
 
-  @media (max-width: 820px) {
-    .reseaux__body { grid-template-columns: 1fr; }
+  .apropos__photo {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .apropos__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1);
+    display: block;
+  }
+
+  .apropos__content {
+    background: linear-gradient(135deg, var(--orange), var(--pink));
+    color: var(--white);
+    padding: 80px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 28px;
+  }
+
+  .apropos__name {
+    font-size: clamp(40px, 5vw, 64px);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .apropos__text {
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 900px) {
+    .apropos {
+      grid-template-columns: 1fr;
+    }
+    .apropos__photo {
+      min-height: 360px;
+    }
+    .apropos__content {
+      padding: 56px 32px;
+    }
   }
 </style>
