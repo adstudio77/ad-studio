@@ -1,23 +1,20 @@
 ---
 ---
-
 <header class="header">
   <div class="wrap header__row">
     <a href="#top" class="header__logo">
       <img src="/logo.png" alt="AD STUDIO — Creative Studio" />
     </a>
-
     <nav class="header__nav">
       <a href="#services">Services</a>
       <a href="#studio">Le studio</a>
       <a href="#partenaires">Nos Partenaires</a>
+      <a href="#projets">Nos Projets</a>
       <a href="#contact">Contact</a>
     </nav>
-
     <a href="#contact" class="btn btn-pink header__cta">
       Demander un devis
     </a>
-
     <button
       class="header__burger"
       aria-label="Ouvrir le menu"
@@ -28,19 +25,17 @@
       <span></span>
     </button>
   </div>
-
   <nav class="header__mobile" id="mobileNav">
     <a href="#services">Services</a>
     <a href="#studio">Le studio</a>
     <a href="#partenaires">Nos Partenaires</a>
+    <a href="#projets">Nos Projets</a>
     <a href="#contact">Contact</a>
-
     <a href="#contact" class="btn btn-pink">
       Demander un devis
     </a>
   </nav>
 </header>
-
 <style>
   .header {
     position: sticky;
@@ -50,7 +45,6 @@
     backdrop-filter: blur(10px);
     border-bottom: 2px solid var(--ink);
   }
-
   .header__row {
     display: flex;
     align-items: center;
@@ -59,32 +53,26 @@
     padding-bottom: 14px;
     gap: 24px;
   }
-
   .header__logo img {
     height: 46px;
     width: auto;
   }
-
   .header__nav {
     display: flex;
     gap: 32px;
     font-weight: 600;
     font-size: 15px;
   }
-
   .header__nav a {
     text-decoration: none;
     position: relative;
   }
-
   .header__nav a:hover {
     color: var(--pink);
   }
-
   .header__cta {
     flex-shrink: 0;
   }
-
   .header__burger {
     display: none;
     flex-direction: column;
@@ -94,14 +82,12 @@
     cursor: pointer;
     padding: 8px;
   }
-
   .header__burger span {
     width: 24px;
     height: 2.5px;
     background: var(--ink);
     border-radius: 2px;
   }
-
   .header__mobile {
     display: none;
     flex-direction: column;
@@ -110,32 +96,22 @@
     font-weight: 600;
     border-top: 1px solid rgba(0, 0, 0, 0.08);
   }
-
   .header__mobile a {
     text-decoration: none;
   }
-
   .header__mobile.open {
     display: flex;
   }
-
   @media (max-width: 860px) {
     .header__nav,
     .header__cta {
       display: none;
     }
-
     .header__burger {
       display: flex;
     }
   }
 </style>
-
 <script>
   const btn = document.getElementById('burgerBtn');
-  const nav = document.getElementById('mobileNav');
-
-  btn?.addEventListener('click', () => {
-    nav?.classList.toggle('open');
-  });
-</script>
+  const nav =
