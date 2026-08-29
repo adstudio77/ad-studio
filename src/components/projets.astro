@@ -1,8 +1,8 @@
 ---
 const slides = [
-  { image: "/stage.png", title: "Stage" },
-  { image: "/armanda.png", title: "Armanda" },
-  { image: "/orange.png", title: "Orange" },
+  { image: "/stage.png" },
+  { image: "/armanda.png" },
+  { image: "/orange.png" },
 ];
 ---
 <section id="projets" class="projets">
@@ -14,8 +14,7 @@ const slides = [
       <div class="slideshow__track" id="slideshowTrack">
         {slides.map((slide) => (
           <div class="slideshow__slide">
-            <img src={slide.image} alt={slide.title} />
-            <p class="slideshow__caption">{slide.title}</p>
+            <img src={slide.image} alt="" />
           </div>
         ))}
       </div>
@@ -74,19 +73,6 @@ const slides = [
     object-fit: cover;
     display: block;
     background: #eee;
-  }
-
-  .slideshow__caption {
-    position: absolute;
-    left: 20px;
-    bottom: 20px;
-    margin: 0;
-    padding: 8px 18px;
-    background: var(--pink);
-    color: var(--white);
-    font-weight: 700;
-    font-size: 14px;
-    border-radius: 100px;
   }
 
   .slideshow__nav {
