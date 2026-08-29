@@ -36,6 +36,7 @@
     </a>
   </nav>
 </header>
+
 <style>
   .header {
     position: sticky;
@@ -112,6 +113,11 @@
     }
   }
 </style>
+
 <script>
   const btn = document.getElementById('burgerBtn');
-  const nav =
+  const nav = document.getElementById('mobileNav');
+  btn?.addEventListener('click', () => {
+    nav?.classList.toggle('open');
+  });
+</script>
